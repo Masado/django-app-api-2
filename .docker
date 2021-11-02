@@ -1,0 +1,34 @@
+# install psycopg2 dependencies
+RUN apk update \
+    && apk add postgresql-dev gcc python3-dev musl-dev
+    
+RUN apk add \
+    bash \
+    ed \
+    less \
+    wget \
+    ca-certificates \
+    R \
+    openjdk11-jre \
+    curl \
+    git \
+    perl \
+    zip \
+    unzip \
+    tar \
+    rsync \
+    gzip \
+    gawk \
+    libressl-dev \
+    libxml2 \
+    libxml2-dev \
+    libxslt \
+    libxslt-dev
+    
+#####################################
+# install nextflow
+RUN curl -s https://get.nextflow.io | bash \
+    && mv nextflow /usr/local/bin \
+    && nextflow info
+#####################################
+
